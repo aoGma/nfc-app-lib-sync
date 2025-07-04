@@ -1,0 +1,10 @@
+# zsh-nfc-app-lib-sync
+
+> A zsh plugin to sync JNI libraries from `nfc-app-lib*` folders in Downloads.
+
+## 🛠 Installation
+
+Clone the repo into your `.oh-my-zsh/custom/plugins` directory:
+
+```bash
+git clone https://github.com/yourusername/zsh-nfc-app-lib-sync ~/.oh-my-zsh/custom/plugins/zsh-nfc-app-lib-sync
