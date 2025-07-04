@@ -10,12 +10,12 @@ function cpios {
   local target_dir="./ios/DeviceUtils"
 
   if [[ ! -d "$target_dir" ]]; then
-    echo "使用最新 nfc-app-lib 目录: $latest"
     echo "目标路径 $target_dir 不存在，请确认当前目录是否正确。"
     return 1
   fi
 
   if [[ -n "$latest" ]]; then
+    echo "使用最新 nfc-app-lib 目录: $latest"
     echo "正在复制 jni 文件到 iOS 工程目录..."
     rsync -av \
       --exclude='Android.mk' \
