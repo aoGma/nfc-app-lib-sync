@@ -10,6 +10,7 @@ function cpios {
   local target_dir="./ios/DeviceUtils"
 
   if [[ ! -d "$target_dir" ]]; then
+    echo "使用最新 nfc-app-lib 目录: $latest"
     echo "目标路径 $target_dir 不存在，请确认当前目录是否正确。"
     return 1
   fi
@@ -37,6 +38,7 @@ function cpandroid {
   fi
 
   if [[ -n "$latest" ]]; then
+    echo "使用最新 nfc-app-lib 目录: $latest"
     echo "正在复制 libs 文件到 Android 工程目录..."
     rsync -av \
       "$latest/libs/" \
@@ -44,4 +46,9 @@ function cpandroid {
   else
     echo "未在 ~/Downloads 中找到以 nfc-app-lib 开头的文件夹。"
   fi
+}
+
+function syncnfc() {
+  cpios || return 1
+  cpandroid || return 1
 }
