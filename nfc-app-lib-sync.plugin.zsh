@@ -2,10 +2,12 @@
 
 # 查找最新的 nfc-app-lib* 文件夹，支持空格
 function _find_latest_nfc_folder {
-  ls -dt ~/Downloads/nfc-app-lib*/ 2>/dev/null | head -n1
+  local download_dir="${NFC_DOWNLOAD_DIR:-$HOME/Downloads}"
+  ls -dt "$download_dir"/nfc-app-lib*/ 2>/dev/null | head -n1
 }
 
 function cpios {
+  local download_dir="${NFC_DOWNLOAD_DIR:-$HOME/Downloads}"
   local latest="$(_find_latest_nfc_folder)"
   local target_dir="./ios/DeviceUtils"
 
@@ -24,11 +26,12 @@ function cpios {
       "$latest/jni/" \
       "$target_dir/"
   else
-    echo "未在 ~/Downloads 中找到以 nfc-app-lib 开头的文件夹。"
+    echo "未在 $download_dir 中找到以 nfc-app-lib 开头的文件夹。"
   fi
 }
 
 function cpandroid {
+  local download_dir="${NFC_DOWNLOAD_DIR:-$HOME/Downloads}"
   local latest="$(_find_latest_nfc_folder)"
   local target_dir="./android/app/src/main/jniLibs"
 
@@ -44,7 +47,7 @@ function cpandroid {
       "$latest/libs/" \
       "$target_dir/"
   else
-    echo "未在 ~/Downloads 中找到以 nfc-app-lib 开头的文件夹。"
+    echo "未在 $download_dir 中找到以 nfc-app-lib 开头的文件夹。"
   fi
 }
 

@@ -17,6 +17,14 @@ git clone https://github.com/aoGma/nfc-app-lib-sync.git ~/.oh-my-zsh/custom/plug
 
 ## 使用方法
 
+解压 `nfc-app-lib` 到 `~/Downloads` 默认使用这个路径
+
+如果要修改默认查找的目录可以修改 `.zshrc` 添加 `export NFC_DOWNLOAD_DIR="$HOME/CustomDownloads"`
+
+匹配 `nfc-app-lib 2`、`nfc-app-lib 3` 等多个目录中最新的那个解析库目录
+
+在项目的根目录执行下列命令
+
 `cpios` : 同步文件到 `ToolBox iOS` 解析库
 
 `cpandroid`: 同步文件到 `ToolBox Android` 解析库
