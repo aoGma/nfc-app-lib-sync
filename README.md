@@ -23,4 +23,4 @@ git clone https://github.com/aoGma/nfc-app-lib-sync.git ~/.oh-my-zsh/custom/plug
 
 `syncnfc`: 同步 `iOS` 和 `Android`，相当于执行 `cpios` 和 `cpandroid`
 
-![demo](https://github.com/aoGma/nfc-app-lib-sync/Kapture%202025-07-04%20at%2010.13.40.gif)
+![demo](https://github.com/aoGma/nfc-app-lib-sync/blob/main/Kapture%202025-07-04%20at%2010.13.40.gif)
