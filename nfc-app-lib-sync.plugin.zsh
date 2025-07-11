@@ -3,7 +3,7 @@
 # 查找最新的 nfc-app-lib* 文件夹，支持空格
 function _find_latest_nfc_folder {
   local download_dir="${NFC_DOWNLOAD_DIR:-$HOME/Downloads}"
-  ls -dt "$download_dir"/nfc-app-lib*/ 2>/dev/null | head -n1
+  find "$download_dir" -maxdepth 1 -type d -name 'nfc-app-lib*' -exec ls -dt {} + 2>/dev/null | head -n1
 }
 
 function cpios {
